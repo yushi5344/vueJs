@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <style>
+        .c1{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">{{str}}
+        <div :class="'c'+id">{{str}}</div>
+        <div>{{!bln?'ok':'no'}}</div>
+        <div v-html="str2"></div>
+        <div v-if="!bln">我是可以显示的</div>
+        <div v-show="!bln">我是可以显示的</div>
+        <button @click="blnShow()">控制显示与隐藏</button>
+    </div>
+</body>
+</html>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            str:'Hello World',
+            id:1,
+            bln:true,
+            str2:'<h3>Hello World</h3>'
+        },
+        methods:{
+            blnShow:function () {
+                this.bln=!this.bln;
+            }
+        }
+    });
+</script>
