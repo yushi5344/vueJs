@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        页码 <input type="number" v-model="page" min="1" max="5">
+       <template v-if="page==1">
+           <h3>第一页</h3>
+           <p>第1段内容</p>
+       </template>
+        <template v-else-if="page==2">
+            <h3>第二页</h3>
+            <p>第2段内容</p>
+        </template>
+        <template v-else-if="page==3">
+            <h3>第三页</h3>
+            <p>第3段内容</p>
+        </template>
+        <template v-else-if="page==4">
+            <h3>第四页</h3>
+            <p>第4段内容</p>
+        </template>
+        <template v-else>
+            <h3>第五页</h3>
+            <p>第5段内容</p>
+        </template>
+    </div>
+</body>
+</html>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            page:1
+        }
+    });
+</script>

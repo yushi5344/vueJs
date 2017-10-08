@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="name">
+        <input type="number" v-model="age">
+        <div>{{change()}}</div>
+        <div>{{change2}}</div>
+    </div>
+</body>
+</html>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            name:'zhangdan',
+            age:20
+        },
+        methods:{
+            change:function () {
+                return this.name+'你好！'+this.age+'岁'
+            },
+        },
+        computed:{
+            change2:{
+                get:function () {
+                    return this.name+'你好'+this.age+'岁'
+                },
+                set:function (v) {
+                    this.age=v;
+                }
+            }
+        }
+    });
+    vm.change2=25;
+</script>
