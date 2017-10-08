@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="radio" v-model="slg" name="sex" value="男">男
+        <input type="radio" v-model="slg" name="sex" value="女">女
+        <input type="checkbox"
+                v-model="arr"
+                name="school"
+                value="小学">小学
+        <input type="checkbox"
+               v-model="arr"
+               name="school"
+               value="中学">中学
+        <input type="checkbox"
+               v-model="arr"
+               name="school"
+               value="大学">大学
+        <select v-model="sle" id="">
+            <option value="男">男</option>
+            <option value="女">女</option>
+        </select>
+        <div>{{slg}}</div>
+        <div>{{arr}}</div>
+        <div>{{sle}}</div>
+        <input type="number" v-model.number="num">
+    </div>
+</body>
+</html>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            num:0,
+            slg:false,
+            arr:[],
+            sle:false
+        }
+    });
+</script>
