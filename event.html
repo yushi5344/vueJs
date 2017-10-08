@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button"
+               value="点击后添加"
+               @click="m=m+1">
+        <input type="button"
+               value="绑定函数的按钮"
+               @click="add">
+        <input type="button"
+               value="绑定可传值函数的按钮"
+               @click="add2(3,4)">
+        <div>{{m}}</div>
+    </div>
+</body>
+</html>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            m:0
+        },
+        methods:{
+            add:function () {
+                this.m+=2;
+            },
+            add2:function (m,n) {
+                this.m=m+n;
+            }
+        }
+    });
+</script>
